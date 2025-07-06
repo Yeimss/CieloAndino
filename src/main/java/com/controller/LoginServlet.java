@@ -10,6 +10,7 @@ import java.io.IOException;
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
     private UserDAO _data = new UserDAO(); 
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String correo = request.getParameter("correo");
@@ -23,5 +24,11 @@ public class LoginServlet extends HttpServlet {
             request.setAttribute("error", "Credenciales incorrectas");
             request.getRequestDispatcher("login.jsp").forward(request, response);
         }
+    }
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        request.getSession().invalidate();
+        response.sendRedirect("login.jsp");
     }
 }

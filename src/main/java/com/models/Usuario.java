@@ -1,6 +1,7 @@
 package com.models;
 
 import java.security.MessageDigest;
+import java.security.SecureRandom;
 
 public class Usuario {
     private int id;
@@ -20,43 +21,33 @@ public class Usuario {
     public int getId() {
         return id;
     }
-
     public String getCorreo() {
         return correo;
     }
-
     public String getNombre() {
         return nombre;
     }
-
     public String getPassword() {
         return password;
     }
-
     public int getId_rol() {
         return id_rol;
     }
-
     public void setId(int id) {
         this.id = id;
     }
-
     public void setCorreo(String correo) {
         this.correo = correo;
     }
-
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-
     public void setPassword(String password) {
         this.password = password;
     }
-
     public void setId_rol(int id_rol) {
         this.id_rol = id_rol;
-    }
-    
+    }   
     public static String sha256(String text){
         try{
             MessageDigest md = MessageDigest.getInstance("SHA-256");
@@ -69,5 +60,17 @@ public class Usuario {
         }catch (Exception ex){
             throw new RuntimeException(ex);
         }
+    }
+    public static String generateRandomEmail(int length){
+        String CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        SecureRandom random = new SecureRandom();
+        
+        StringBuilder sb = new StringBuilder(length);
+        for (int i = 0; i < length; i++) {
+            int index = random.nextInt(CHARACTERS.length());
+            sb.append(CHARACTERS.charAt(index));
+        }
+        String randomText = sb.toString();
+        return String.format("test%s@test.com", randomText);
     }
 }

@@ -1,5 +1,8 @@
 C:\Users\James\Downloads\CieloAndino\src\main\java\com\controller\LoginServlet.java
 C:\Users\James\Downloads\CieloAndino\src\main\java\com\controller\LogoutServlet.java
 C:\Users\James\Downloads\CieloAndino\src\main\java\com\controller\RegisterServlet.java
+C:\Users\James\Downloads\CieloAndino\src\main\java\com\controller\ReservationServerlet.java
+C:\Users\James\Downloads\CieloAndino\src\main\java\com\data\ReservationDAO.java
 C:\Users\James\Downloads\CieloAndino\src\main\java\com\data\UserDAO.java
+C:\Users\James\Downloads\CieloAndino\src\main\java\com\models\ReservationDTO.java
 C:\Users\James\Downloads\CieloAndino\src\main\java\com\models\Usuario.java
